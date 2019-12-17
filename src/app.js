@@ -30,7 +30,7 @@ class App {
 
   exceptionHandler() {
     this.server.use(async (err, req, res, next) => {
-      if (process.env.NODE_END === 'development') {
+      if (process.env.NODE_ENV === 'development') {
         return res.status(500).json({ error: err });
       }
 
